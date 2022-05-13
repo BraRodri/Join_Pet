@@ -1,0 +1,112 @@
+
+.percent { width: 85.71429%; }
+
+.panel-primary { border-color: #009dda; }
+
+
+.top-nav {
+  min-width: 1200px;
+  background-color: #333333;
+  height: 40px;
+  line-height: 40px;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.top-nav .nav-box {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+}
+
+.top-nav a { margin-left: 10px; }
+
+.top-nav a:hover { color: #fff; }
+
+.med-nav {
+  min-width: 1200px;
+  background-color: #000;
+}
+
+.med-nav ul { overflow: hidden; }
+
+.med-nav ul li {
+  float: left;
+  margin-right: 10px;
+}
+
+.med-nav ul li a {
+  display: block;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  line-height: 45px;
+}
+
+.med-nav ul li a:hover { background-color: #000; }
+
+.med-nav ul li.active > a { background-color: #000; }
+
+
+/*keep footer always on bottom end*/
+
+.handle-counter { overflow: hidden; max-width: 80px;}
+
+.handle-counter .counter-minus,  .handle-counter .counter-plus,  .handle-counter input {
+  float: left;
+  text-align: center;
+}
+
+.handle-counter .counter-minus,  .handle-counter .counter-plus { text-align: center; }
+
+.handle-counter input {
+  width: 30px;
+  border-width: 0;
+  border-left: none;
+  border-right: none;
+  background: #fafafa !important;
+}
+
+.handle-counter .btn {
+  padding: 6px;
+  border: 1px solid transparent;
+  color: #000;
+}
+
+.handle-counter  .btn:disabled, .btn:disabled:hover {
+  background-color: darkgrey;
+  cursor: not-allowed;
+}
+.handle-counter .form-control {padding: 0;}
+.handle-counter  i {font-size: 10px;}
+.handle-counter  .btn-primary { background-color: #fff; }
+.handle-counter  .btn-primary:not(:disabled):not(.disabled):active { background-color: #000; }
+
+.handle-counter  .btn-primary:hover, .btn-primary:focus { background-color: #888; }
+
+.handle-counter  .margin-top { margin-top: 150px; }
+
+.handle-counter  .margin-bottom { margin-bottom: 20px; }
+
+.handle-counter  .pull-right { float: right !important; }
+
+.handle-counter  .pull-left { float: left !important; }
+
+.handle-counter  .hide { display: none; }
+
+.handle-counter  .show { display: block; }
+
+.handle-counter  invisible { visibility: hidden; }
+
+.handle-counter  a { color: #999; }
+
+.handle-counter  a:hover { color: #FF5113; }
+
+.handle-counter  border { border: 1px solid red; }
+
+
+@media (max-width: 576px) {
+  .handle-counter {min-width: 100px; margin-bottom: 5px;}
+  .handle-counter .btn {padding: 6px 12px;}
+}

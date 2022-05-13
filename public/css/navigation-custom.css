@@ -1,0 +1,51 @@
+.navigation-item:not(.navigation-brand-text):hover .navigation-link,
+.navigation-item:not(.navigation-brand-text):focus .navigation-link,
+.navigation-item:not(.navigation-brand-text).is-active .navigation-link {
+    color: #002367;
+}
+.navigation-avatar-item .navigation-link img {
+    border: solid 2px #002367;
+}
+.navigation-item:hover > .navigation-link > .submenu-indicator:after,
+.navigation-item:focus > .navigation-link > .submenu-indicator:after,
+.navigation-item.is-active > .navigation-link > .submenu-indicator:after {
+    border-color: transparent #002367 #002367 transparent;
+}
+.navigation-btn {
+    border-color: #002367;
+    background-color: #002367;
+}
+.navigation-btn:hover,
+.navigation-btn:focus {
+    background-color: #002367;
+}
+.navigation-badge {
+    background-color: #002367;
+}
+.navigation-input:hover,
+.navigation-input:focus {
+    border-color: #002367;
+}
+.navigation-btn:hover .navigation-search-icon {
+    color: #002367;
+}
+.navigation-dropdown-item:hover > .navigation-dropdown-link,
+.navigation-dropdown-item:focus > .navigation-dropdown-link,
+.navigation-dropdown-item.is-active > .navigation-dropdown-link {
+    color: #002367;
+}
+.navigation-dropdown-item:hover > .navigation-dropdown-link > .submenu-indicator:after,
+.navigation-dropdown-item:focus > .navigation-dropdown-link > .submenu-indicator:after,
+.navigation-dropdown-item.is-active > .navigation-dropdown-link > .submenu-indicator:after {
+    border-color: transparent #002367 #002367 transparent;
+}
+.navigation-list > li > a:hover {
+    color: #002367;
+}
+@media (min-width: 992px) {
+    .navigation-item:not(.navigation-brand-text):hover .navigation-link,
+    .navigation-item:not(.navigation-brand-text):focus .navigation-link,
+    .navigation-item:not(.navigation-brand-text).is-active .navigation-link {
+        border-bottom-color: #002367 !important;
+    }
+}
