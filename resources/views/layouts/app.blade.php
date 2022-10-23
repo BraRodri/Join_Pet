@@ -8,24 +8,24 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Titutlo -->
-        <title>Inicio - Join Pet</title>
+        <title>@yield('pagina')| Join Pet</title>
 
-        <x-meta>
+        <x-page.meta>
             {{$meta}}
-        </x-meta>
+        </x-page.meta>
 
         <!-- Styles -->
-        <x-css></x-css>
+        <x-page.css></x-page.css>
     </head>
     <body>
-        <x-header></x-header>
+        <x-page.header></x-page.header>
 
         {{ $slot }}
 
-        <x-footer></x-footer>
+        <x-page.footer></x-page.footer>
 
-        <x-js>
+        <x-page.js>
             {{$js}}
-        </x-js>
+        </x-page.js>
     </body>
 </html>
