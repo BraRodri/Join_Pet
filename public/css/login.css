@@ -1,0 +1,24 @@
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: #FC0030 !important;
+    border-color: #FC0030 !important;
+}
+
+.swal2-styled.swal2-confirm:focus {
+    border-color: #FC0030 !important;
+    box-shadow: 0 0 0 3px #ddd !important;
+}
+
+.text-final{
+    margin-top: 25px;
+    margin-bottom: -20px;
+}
+
+.imagen{
+    margin-top: -50px;
+    margin-bottom: -10px;
+}

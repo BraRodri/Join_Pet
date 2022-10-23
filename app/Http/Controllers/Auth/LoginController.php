@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -36,5 +39,27 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request)
+    {
+        $error = false;
+        $mensaje = '';
+
+        $val_usuario = User::where('email', $request->email)->first();
+        if ($val_usuario) {
+            if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+                $error = false;
+                $mensaje = 'SI';
+            } else {
+                $error = true;
+                $mensaje = 'Error! No coinciden las credenciales ingresada, intente de nuevo.';
+            }
+        } else {
+            $error = true;
+            $mensaje = 'Error! No existe ningun usuario registrado con este correo.';
+        }
+
+        echo json_encode(array('error' => $error, 'mensaje' => $mensaje));
     }
 }
