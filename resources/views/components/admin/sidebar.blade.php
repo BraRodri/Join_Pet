@@ -33,6 +33,31 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
+    <!-- Configuración -->
+    @if(auth()->user()->can('Ver Roles y Permisos'))
+        <li class="nav-item {{ ! Route::is('roles.index') ?: 'active' }}">
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fa-solid fa-gear"></i>
+                <span>Configuración</span>
+            </a>
+            <div id="collapseTwo" class="collapse "
+            aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Opciones:</h6>
+                    @can('Ver Roles y Permisos')
+                        <a class="collapse-item {{ ! Route::is('roles.index') ?: 'active' }}" href="{{ route('roles.index') }}">
+                            Roles y Permisos
+                        </a>
+                    @endcan
+                </div>
+            </div>
+        </li>
+    @endif
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

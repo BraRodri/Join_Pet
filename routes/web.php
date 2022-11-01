@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PanelController;
+use App\Http\Controllers\RolesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,16 @@ Route::group(['middleware' => 'auth', 'prefix' => '/panel'], function () {
         Route::get('/categorias/eliminar/{id}', 'eliminar')->name('categorias.eliminar');
         Route::get('/categorias/editar/{id}', 'editar')->name('categorias.editar');
         Route::post('/categorias/actualizar', 'actualizar')->name('categorias.actualizar');
+    });
+
+    #Roles y Permisos
+    Route::controller(RolesController::class)
+        ->prefix('configuracion/roles')->group(function () {
+        Route::get('/', 'index')->name('roles.index');
+        Route::post('/create', 'create')->name('roles.create');
+        Route::get('/all', 'all')->name('roles.all');
+        Route::get('edit/{id}', 'edit')->name('roles.edit');
+        Route::post('/update', 'update')->name('roles.update');
     });
 
 });
