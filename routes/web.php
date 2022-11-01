@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PanelController;
 use Illuminate\Support\Facades\Auth;
@@ -30,9 +31,19 @@ Route::group(['middleware' => 'auth', 'prefix' => '/panel'], function () {
     #Principal
     Route::controller(PanelController::class)
         ->group(function () {
+        Route::get('/', 'index')->name('panel');
+    });
 
-            #Inicio
-            Route::get('/', 'index')->name('panel');
-        });
+    #Categorias
+    Route::controller(CategoriasController::class)
+        ->group(function () {
+        Route::get('/categorias', 'index')->name('categorias.index');
+        Route::get('/categorias/obtener', 'obtener')->name('categorias.obtener');
+        Route::get('/categorias/crear', 'crear')->name('categorias.crear');
+        Route::post('/categorias/guardar', 'guardar')->name('categorias.guardar');
+        Route::get('/categorias/eliminar/{id}', 'eliminar')->name('categorias.eliminar');
+        Route::get('/categorias/editar/{id}', 'editar')->name('categorias.editar');
+        Route::post('/categorias/actualizar', 'actualizar')->name('categorias.actualizar');
+    });
 
 });

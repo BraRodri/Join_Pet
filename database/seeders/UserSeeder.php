@@ -16,9 +16,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Administrador JoinPet',
+            'name' => 'Super Administrador JoinPet',
             'email' => 'administrador@gmail.com',
             'password' => Hash::make('123456789')
-        ]);
+        ])->assignRole('Super Administrador');;
     }
 }
