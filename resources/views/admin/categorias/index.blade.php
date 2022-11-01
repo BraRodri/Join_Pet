@@ -18,11 +18,13 @@
             <div class="col-lg-6">
                 <h1 class="h3 text-gray-800">Categorias</h1>
             </div>
-            <div class="col-lg-6 text-end">
-                <a href="{{ route('categorias.crear') }}" class="btn btn-warning btn-sm rounded">
-                    Agregar Nueva Categoria
-                </a>
-            </div>
+            @can('Crear Categorias')
+                <div class="col-lg-6 text-end">
+                    <a href="{{ route('categorias.crear') }}" class="btn btn-warning btn-sm rounded">
+                        Agregar Nueva Categoria
+                    </a>
+                </div>
+            @endcan
         </div>
 
         <div class="card mt-4 mb-5">

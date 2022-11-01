@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categorias;
 use App\Services\GenerateCategories;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -85,10 +86,18 @@ class CategoriasController extends Controller
                 //principal
                 $principal = $value->parent_id == 0 ? '<i class="fa fa-flag fa-lg text-info" aria-hidden="true" title="Categoría Principal"></i>' : '';
 
+                //botones
+                $botones = '';
+                if(Auth::user()->can('Editar Categorias')){
+                    $botones .= '<a href="'.$editar.'" class="btn btn-success btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>';
+                }
+                if(Auth::user()->can('Eliminar Categorias')){
+                    $botones .= '<button id="btn_eliminar" class="btn btn-danger btn-sm" onclick="funcionEliminar('.$value->id.');"><i class="fa-solid fa-xmark"></i></button>';
+                }
+
                 $datos[] = array(
                     'id' => $value->id,
-                    'boton' => '<a href="'.$editar.'" class="btn btn-success btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>'.
-                    '<button id="btn_eliminar" class="btn btn-danger btn-sm" onclick="funcionEliminar('.$value->id.');"><i class="fa-solid fa-xmark"></i></button>',
+                    'boton' => $botones,
                     'fecha' => date("Y-m-d h:i:s a", strtotime($value->updated_at)),
                     'estado' => $estado,
                     'nombre' => $titulo,
