@@ -47,4 +47,18 @@
 
 </script>
 
+<!-- FANCYBOX 3 -->
+<script type="text/javascript" src={{ asset('vendor/fancybox/jquery.fancybox.js') }}></script>
+<script type="text/javascript">
+    $('[data-fancybox]').fancybox({
+        image: {
+            protect: true
+        },
+        loop: false,
+        speed: 320,
+        slideShow: false
+    });
+</script>
+<!-- END -->
+
 {{$slot}}

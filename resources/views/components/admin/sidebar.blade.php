@@ -20,13 +20,15 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Inicio -->
-    <li class="nav-item {{ ! Route::is('categorias.index') ?: 'active' }}">
-        <a class="nav-link" href="{{ route('categorias.index') }}">
-            <i class="fa-solid fa-clipboard-list"></i>
-            <span>Categorias</span>
-        </a>
-    </li>
+    <!-- Gestión de Categorias -->
+    @can('Ver Categorias')
+        <li class="nav-item {{ ! Route::is('categorias.index') ?: 'active' }}">
+            <a class="nav-link" href="{{ route('categorias.index') }}">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>Gestión de Categorias</span>
+            </a>
+        </li>
+    @endcan
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

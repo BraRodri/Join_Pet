@@ -15,3 +15,5 @@
 
 <!-- calendario -->
 <link href="{{ asset('vendor/fullcalendar/main.css') }}" rel="stylesheet" />
+
+<link rel="stylesheet" href={{ asset('vendor/fancybox/jquery.fancybox.css') }}>
